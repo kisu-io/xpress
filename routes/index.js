@@ -28,22 +28,14 @@ router.get("/:id", function(req, res, next) {
 
 
 router.post("/news", function (req, res, next) {
-  const requestBody = {
-    "title": "Morning HCM",
-    "category": ["daily", "general", "covid19"],
-    "city": "HCM"
-  };
-  res.send(`Successfully create a news about ${requestBody.title} in ${requestBody.city} and related to category of ${requestBody.category[0]}, ${requestBody.category[1]} and ${requestBody.category[2]}`);
+  const {title, category, city} = req.body;
+  res.send(`Successfully create a news about ${title} in ${city} and related to category of ${category}`);
 })
 
 
 router.put("/news/:id", function (req, res, next) {
-  const requestBody = {
-    "title": "Afternoon HCM",
-    "category": ["daily", "general", "covid19"],
-    "city": "HCM"
-  };
-  res.send(`Successfully create a news about ${requestBody.title} in ${requestBody.city} and related to category of ${requestBody.category[0]}, ${requestBody.category[1]} and ${requestBody.category[2]}`);
+  const {title, category, city} = req.body;
+  res.send(`Successfully create a news about ${title} in ${city} and related to category of ${category}}`);
 })
 
 router.delete("/news/:id", function (req, res, next) {
